@@ -1,9 +1,6 @@
 package de.gregor.demo;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -16,4 +13,10 @@ public class TestController {
         testData.setTestProperty(test.getTestProperty());
         return testData;
     }
+
+    @RequestMapping("/tests")
+    public @ResponseBody String getTests() {
+        return "{\"success\": true}";
+    }
+
 }
